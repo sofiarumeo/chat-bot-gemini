@@ -1,12 +1,12 @@
 from enum import Enum
 class RolePreset(Enum):
-    PROFESSOR = "profesor",
+    PROFESOR = "profesor",
     TRADUCTOR = "traductor",
     ASISTENTE = "asistente",
     PROGRAMADOR = "programador"
 
 ROLE_SYSTEM_PROMPTS = {
-    RolePreset.PROFESSOR: (
+    RolePreset.PROFESOR: (
         "Actua como profesor paciente y claro. Explica con ejemplos simples,"
         "resumi al final con bullets de 2-4 puntos."
     ),

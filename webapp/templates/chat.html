@@ -1,0 +1,50 @@
+<!-- webapp/templates/chat.html --> 
+{% extends "base.html" %} 
+{% block content %} 
+ 
+<div class="row justify-content-center"> 
+  <div class="col-12 col-lg-8"> 
+    <div class="card shadow-lg border-0"> 
+      <div class="card-header d-flex flex-wrap gap-2 align-items-center">
+       <span class="fw-semibold me-auto">Chat</span> 
+ 
+        <!-- Selector de Rol (solo UI por ahora) --> 
+        <div class="d-flex align-items-center gap-2"> 
+          <label for="roleSelect" class="form-label m-0 small text-muted">Rol</label> 
+          <select id="roleSelect" class="form-select form-select-sm"> 
+            <option value="asistente" selected>Asistente</option> 
+            <option value="profesor">Profesor</option> 
+            <option value="traductor">Traductor</option> 
+            <option value="programador">Programador</option> 
+          </select> 
+        </div>
+        <button id="btnClear" class="btn btn-outline-secondary btn-sm"> 
+          Limpiar 
+        </button> 
+      </div> 
+ 
+      <div id="chatBody" class="card-body chat-body"> 
+        <!-- Mensajes renderizados por JS --> 
+      </div> 
+ 
+      <div class="card-footer"> 
+        <form id="chatForm" class="d-flex gap-2"> 
+          <input 
+            id="chatInput" 
+            class="form-control" 
+            type="text" 
+            placeholder="Escribí tu mensaje..." 
+            autocomplete="off"/> 
+          <button id="btnSend" class="btn btn-primary" type="submit"> 
+            Enviar 
+          </button> 
+        </form> 
+        <small class="text-muted"> 
+          * Esta versión usa <strong>mock del lado del cliente</strong>. No hay conexión con el backend aún. 
+        </small> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+ 
+{% endblock %}
